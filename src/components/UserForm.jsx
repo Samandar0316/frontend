@@ -48,10 +48,10 @@ export default function UserForm({ addUser, editingUser, updateUser, cancelEdit 
         onChange={(e) => setEmail(e.target.value)}
       />
       <div className="buttons">
-        <button type="submit">{editingUser ? 'Yangilash' : 'Qo‘shish'}</button>
+        <button type="submit">{editingUser ? 'Update' : 'Add'}</button>
         {editingUser && (
           <button type="button" onClick={cancelEdit} className="cancel-btn">
-            Cancel
+            Bekor qilish
           </button>
         )}
       </div>
