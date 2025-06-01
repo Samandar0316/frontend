@@ -51,7 +51,7 @@ export default function UserForm({ addUser, editingUser, updateUser, cancelEdit 
         <button type="submit">{editingUser ? 'Yangilash' : 'Qo‘shish'}</button>
         {editingUser && (
           <button type="button" onClick={cancelEdit} className="cancel-btn">
-            Bekor qilish
+            Cancel
           </button>
         )}
       </div>
