@@ -1,0 +1,185 @@
+/* UserList.css */
+.user-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: linear-gradient(135deg, rgba(20, 20, 30, 0.95), rgba(40, 40, 60, 0.95));
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3), 0 0 60px rgba(128, 0, 255, 0.2);
+    margin: 30px 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Neon fon effekti */
+  .user-table::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+    opacity: 0.3;
+    z-index: -1;
+  }
+  
+  /* Dark theme support */
+  @media (prefers-color-scheme: dark) {
+    .user-table {
+      background: linear-gradient(135deg, rgba(10, 10, 20, 0.95), rgba(30, 30, 50, 0.95));
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.4), 0 0 80px rgba(128, 0, 255, 0.3);
+    }
+  }
+  
+  /* Table Header */
+  .user-table thead tr {
+    background: linear-gradient(90deg, #00f7ff, #ff00ff);
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+  }
+  
+  .user-table th {
+    padding: 18px;
+    text-align: left;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Table Body */
+  .user-table tbody tr {
+    transition: all 0.3s ease;
+  }
+  
+  .user-table tbody tr:hover {
+    background: rgba(0, 255, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  }
+  
+  .user-table td {
+    padding: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    font-size: 1rem;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Buttons */
+  .user-table button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .user-table button:not(.delete-btn) {
+    background: linear-gradient(90deg, #00f7ff, #00e7ff);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  }
+  
+  .user-table button:not(.delete-btn):hover {
+    background: linear-gradient(90deg, #00e7ff, #00d7ff);
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
+  }
+  
+  .user-table .delete-btn {
+    background: linear-gradient(90deg, #ff00ff, #e600e6);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+  }
+  
+  .user-table .delete-btn:hover {
+    background: linear-gradient(90deg, #e600e6, #d400d4);
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.7);
+  }
+  
+  /* Tugma neon effekti */
+  .user-table button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transition: 0.5s;
+  }
+  
+  .user-table button:hover::before {
+    left: 100%;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .user-table {
+      display: block;
+      overflow-x: auto;
+    }
+  
+    .user-table th,
+    .user-table td {
+      min-width: 120px;
+    }
+  
+    .user-table thead {
+      display: none;
+    }
+  
+    .user-table tbody tr {
+      display: block;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    }
+  
+    .user-table tbody td {
+      display: block;
+      text-align: right;
+      position: relative;
+      padding-left: 50%;
+      border: none;
+      font-size: 0.9rem;
+    }
+  
+    .user-table tbody td:before {
+      content: attr(data-label);
+      position: absolute;
+      left: 16px;
+      font-weight: 600;
+      color: #00f7ff;
+      text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    }
+  
+    .user-table tbody td:last-child {
+      text-align: center;
+      padding: 12px;
+    }
+  }
+  
+  /* Data labels for mobile view */
+  .user-table tbody td[data-label="ID"]:before { content: "ID"; }
+  .user-table tbody td[data-label="Ism"]:before { content: "Ism"; }
+  .user-table tbody td[data-label="Email"]:before { content: "Email"; }
+  .user-table tbody td[data-label="Amallar"]:before { content: ""; }
