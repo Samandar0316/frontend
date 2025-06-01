@@ -95,7 +95,7 @@ function App() {
   return (
     <div style={{ maxWidth: 800, margin: "30px auto", padding: "0 16px" }}>
       <h1 style={{ fontFamily: "'Inter', sans-serif", textAlign: "center", color: "#1f2937" }}>
-        User Management
+        {/* User Management */}
       </h1>
       <UserForm
         addUser={addUser}
