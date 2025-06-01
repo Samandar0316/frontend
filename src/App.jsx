@@ -103,7 +103,7 @@ function App() {
         updateUser={updateUser}
         cancelEdit={cancelEdit}
       />
-      {/* <UserList users={users} onEdit={handleEdit} onDelete={handleDelete} /> */}
+      <UserList users={users} onEdit={handleEdit} onDelete={handleDelete} />
     </div>
   );
 }
